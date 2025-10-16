@@ -1,0 +1,21 @@
+using System;
+
+namespace ArrayOperations
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = new int[10];
+
+            // Step 1: Accept 10 integers
+            Console.WriteLine("Enter 10 integers:");
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write($"Element {i + 1}: ");
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            // Step 2: Sort the array in descending order
+            // (without built-in Sort descending)
+            for (int i = 0; i <
