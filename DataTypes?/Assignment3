@@ -1,0 +1,34 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string input = Console.ReadLine();
+        string incremented = "";
+
+        // Step 1: Increment each character by 1
+        foreach (char c in input)
+        {
+            char nextChar = (char)(c + 1);
+            incremented += nextChar;
+        }
+
+        // Step 2: Toggle case for all characters
+        string toggled = "";
+        foreach (char c in incremented)
+        {
+            if (char.IsUpper(c))
+                toggled += char.ToLower(c);
+            else if (char.IsLower(c))
+                toggled += char.ToUpper(c);
+            else
+                toggled += c;  // Leave non-letters as they are
+        }
+
+        Console.WriteLine($"\nOriginal String: {input}");
+        Console.WriteLine($"After Increment: {incremented}");
+        Console.WriteLine($"After Toggle Case: {toggled}");
+    }
+}
