@@ -1,0 +1,35 @@
+using System;
+
+namespace DigitPositionFinder
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the first number: ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter the second number (single digit): ");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            // Extract digits from num1
+            int units = num1 % 10;
+            int tens = (num1 / 10) % 10;
+            int hundreds = (num1 / 100) % 10;
+            int thousands = (num1 / 1000) % 10;
+
+            Console.WriteLine(); // Blank line for clarity
+
+            if (num2 == units)
+                Console.WriteLine($"{num2} is in the UNITS place of {num1}");
+            else if (num2 == tens)
+                Console.WriteLine($"{num2} is in the TENS place of {num1}");
+            else if (num2 == hundreds)
+                Console.WriteLine($"{num2} is in the HUNDREDS place of {num1}");
+            else if (num2 == thousands)
+                Console.WriteLine($"{num2} is in the THOUSANDS place of {num1}");
+            else
+                Console.WriteLine($"{num2} is not found in the units, tens, hundreds, or thousands place of {num1}");
+        }
+    }
+}
