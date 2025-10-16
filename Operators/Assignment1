@@ -1,0 +1,38 @@
+using System;
+
+namespace IncrementAndSwap
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1, num2;
+
+            // Accept numbers
+            Console.Write("Enter num1: ");
+            num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter num2: ");
+            num2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\n--- Pre-Increment Example ---");
+            num1 = num1 + 0; // just to preserve original for clarity
+            int preNum1 = num1;
+            int preNum2 = ++preNum1; // pre-increment before assignment
+            Console.WriteLine($"After pre-increment: num1 = {preNum1}, num2 = {preNum2}");
+
+            Console.WriteLine("\n--- Post-Increment Example ---");
+            int postNum1 = num1;      // reset to original
+            int postNum2 = postNum1++; // assign first, then increment
+            Console.WriteLine($"After post-increment: num1 = {postNum1}, num2 = {postNum2}");
+
+            Console.WriteLine("\n--- Swapping Values ---");
+            int a = num1, b = num2;
+            Console.WriteLine($"Before Swap: a = {a}, b = {b}");
+            int temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine($"After Swap: a = {a}, b = {b}");
+        }
+    }
+}
