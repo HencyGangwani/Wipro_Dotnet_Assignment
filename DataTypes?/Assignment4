@@ -1,0 +1,39 @@
+using System;
+
+namespace StringManipulationApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Accept string from user
+            Console.Write("Enter a string: ");
+            string input = Console.ReadLine();
+
+            //  Print string in reverse order
+            char[] charArray = input.ToCharArray();
+            Array.Reverse(charArray);
+            string reversed = new string(charArray);
+            Console.WriteLine("\n Reversed String: " + reversed);
+
+            //  Extract part of string from 2nd position till end
+            string extracted = input.Length > 1 ? input.Substring(1) : "";
+            Console.WriteLine(" Extracted (from 2nd character): " + extracted);
+
+            //  Replace any given character by $
+            Console.Write("Enter a character to replace with $: ");
+            char toReplace = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+
+            string replaced = input.Replace(toReplace.ToString(), "$");
+            Console.WriteLine(" After Replacement: " + replaced);
+
+            // Copy the string to another variable, modify it and print both
+            string copyString = input;              // copy original
+            string modifiedString = copyString + "_modified";  // modify copy
+
+            Console.WriteLine(" Original String Copy: " + copyString);
+            Console.WriteLine(" Modified Copy: " + modifiedString);
+        }
+    }
+}
