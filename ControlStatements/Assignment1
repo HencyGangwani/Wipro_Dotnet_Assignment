@@ -1,0 +1,43 @@
+using System;
+
+namespace LoginSystem
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Predefined correct login and password
+            string correctLogin = "admin";
+            string correctPassword = "12345";
+
+            int attempts = 0;
+            bool isAuthenticated = false;
+
+            while (attempts < 3)
+            {
+                Console.Write("Enter your login: ");
+                string login = Console.ReadLine();
+
+                Console.Write("Enter your password: ");
+                string password = Console.ReadLine();
+
+                if (login == correctLogin && password == correctPassword)
+                {
+                    Console.WriteLine("\n✅ Login successful! Welcome, " + login + "!");
+                    isAuthenticated = true;
+                    break;
+                }
+                else
+                {
+                    attempts++;
+                    Console.WriteLine($"\n❌ Incorrect login or password. Attempt {attempts}/3.\n");
+                }
+            }
+
+            if (!isAuthenticated)
+            {
+                Console.WriteLine("🚫 Access denied! Too many incorrect attempts.");
+            }
+        }
+    }
+}
