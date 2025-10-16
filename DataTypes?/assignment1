@@ -1,0 +1,15 @@
+//Create a console application to accept the size of a square and print the area of the square.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the size of the square: ");
+        double side = Convert.ToDouble(Console.ReadLine());
+
+        double area = side * side;
+
+        Console.WriteLine($"The area of the square is: {area}");
+    }
+}
