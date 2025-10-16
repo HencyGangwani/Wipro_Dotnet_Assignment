@@ -1,0 +1,32 @@
+using System;
+
+namespace ArrayElementCounter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Accept array elements from user
+            Console.Write("Enter number of elements you want to store: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            
+            int[] arr = new int[n];
+
+            Console.WriteLine("\nEnter array elements:");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Element {i + 1}: ");
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            // Now find number of elements without using .Length
+            int count = 0;
+            foreach (int item in arr)
+            {
+                count++;
+            }
+
+            Console.WriteLine($"\nNumber of elements in the array: {count}");
+        }
+    }
+}
